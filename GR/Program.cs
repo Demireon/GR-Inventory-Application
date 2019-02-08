@@ -47,7 +47,7 @@ namespace GR
             foreach (var item in Items)
             {
                 Console.WriteLine(" - Item: {0}", item.Name);
-                if (item.Name != "Aged Brie" && !item.Name.Contains("Backstage passes"))
+                if (item.Name != "Aged Brie" && !item.Name.Contains("Backstage passes") && !item.Name.Contains("Conjured"))
                 {
                     if (item.Quality > 0)
                     {
@@ -57,28 +57,43 @@ namespace GR
                         }
                     }
                 }
+                if (item.Name.Contains("Conjured"))
+                {
+                    if (item.Quality > 0)
+                    {
+                        item.Quality = item.Quality - 2;
+                    }
+                }
                 else
                 {
                     if (item.Quality < 50)
                     {
-                        item.Quality = item.Quality + 1;
+                        if (item.Name.Contains("Aged Brie"))
+                        {
+                            item.Quality = item.Quality + 1;
+                        }
 
                         if (item.Name.Contains("Backstage passes"))
                         {
-                            if (item.SellIn < 11)
+                            if (item.SellIn < 11 && item.SellIn > 5)
                             {
                                 if (item.Quality < 50)
                                 {
-                                    item.Quality = item.Quality + 1;
+                                    item.Quality = item.Quality + 2;
                                 }
                             }
 
-                            if (item.SellIn < 6)
+                            else if (item.SellIn < 6)
                             {
                                 if (item.Quality < 50)
                                 {
-                                    item.Quality = item.Quality + 1;
+                                    item.Quality = item.Quality + 3;
                                 }
+                            }
+
+                            else
+                            {
+                                item.Quality = item.Quality + 1;
                             }
                         }
                     }
@@ -99,7 +114,7 @@ namespace GR
 
                         if (item.Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            item.Quality = item.Quality - 1;
+                            item.Quality = 0;
                         }
                     }
                     else
