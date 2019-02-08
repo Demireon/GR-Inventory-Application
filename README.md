@@ -2,6 +2,10 @@
 
 I focused on a TDD approach with this challenge where I created a suite of tests that tested the funcionality of the code. With the failed tests, added the new feature and the two bug fixes so that the statements of the challenge would be satisfied for this GR Application.
 
+# Passing Tests
+
+![Passing Tests](/images/Passing-code.png)
+
 ##
 
 # GR Application
