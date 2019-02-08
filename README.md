@@ -1,3 +1,9 @@
+# Developer Approach
+
+I focused on a TDD approach with this challenge where I created a suite of tests that tested the funcionality of the code. With the failed tests, added the new feature and the two bug fixes so that the statements of the challenge would be satisfied for this GR Application.
+
+##
+
 # GR Application
 
 Hi and welcome to GR. We also buy and sell only the finest goods. 
